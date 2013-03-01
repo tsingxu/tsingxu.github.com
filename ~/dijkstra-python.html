@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="http://tsingxu.github.com/stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="http://tsingxu.github.com/stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="http://tsingxu.github.com/stylesheets/print.css" media="print" />
+	
+    <title>TsingXu's Blog</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Tsingxu.github.com</h1>
+        <h2></h2>
+
+        <section id="downloads">
+          <a href="https://github.com/tsingxu" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <pre>'''
+Created on Dec 10, 2012
+
+@author: x00199331
+'''
+def dijkstra(graph, s):
+    dis = [graph[s][i] for i in range(0, len(graph))]
+    flag = [0 for i in range(0, len(graph))]
+    
+    for i in range(0, len(graph)):
+        selected = -1;
+        max_weight = 1E8;
+        
+        for j in range(0, len(graph)):
+            if (flag[j] == 0) and (dis[j] &lt; max_weight):
+                max_weight = dis[j]
+                selected = j
+        if selected != -1:
+            flag[selected] = 1
+            for j in range(0, len(graph)):
+                if  j != selected:
+                    if dis[j] &gt; dis[selected] + graph[selected][j]:
+                        dis[j] = dis[selected] + graph[selected][j]
+    return dis</pre>
+&nbsp; &nbsp; 图的存储用的是邻接矩阵，extractMin用的是O(n)的遍历，复杂度为O(n^2)，优化点包括extractMin和存储的数据结构。extractMin可参考最小堆，数据结构可根据边的多少，如果边比较少的话可使用邻接链表，较多的话可直接使用邻接矩阵。前者的优化会有更大的空间。 <br />
+      </section>
+    </div>
+
+    
+  </body>
+</html>
+
+
