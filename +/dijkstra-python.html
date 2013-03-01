@@ -2,15 +2,23 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="http://tsingxu.github.com/stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="http://tsingxu.github.com/stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="http://tsingxu.github.com/stylesheets/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/print.css" media="print" />
 	
     <title>TsingXu's Blog</title>
+	<script>
+		function pageScroll(){
+			window.scrollBy(0,-100);//把内容滚动指定的像素数（第一个参数是向右滚动的像素数，第二个参数是向下滚动的像素数）
+			scrolldelay = setTimeout('pageScroll()',10);//延时递归调用，模拟滚动向上效果
+			var sTop=document.documentElement.scrollTop+document.body.scrollTop;//获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和值可以得到网页的真正的scrollTop值
+			if(sTop==0) clearTimeout(scrolldelay);//判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）
+		}
+	</script>
   </head>
 
   <body>
-
+	<a name='top'></a>
     <header>
       <div class="container">
         <h1>Tsingxu.github.com</h1>
@@ -23,7 +31,7 @@
     </header>
 
     <div class="container">
-      <section id="main_content">
+      <section id="main_content" >
         <pre>'''
 Created on Dec 10, 2012
 
@@ -51,8 +59,8 @@ def dijkstra(graph, s):
 &nbsp; &nbsp; 图的存储用的是邻接矩阵，extractMin用的是O(n)的遍历，复杂度为O(n^2)，优化点包括extractMin和存储的数据结构。extractMin可参考最小堆，数据结构可根据边的多少，如果边比较少的话可使用邻接链表，较多的话可直接使用邻接矩阵。前者的优化会有更大的空间。 <br />
       </section>
     </div>
-
-    
+	
+	<div align="right">&nbsp<a onclick="pageScroll()">返回顶部</a><hr><p style="font-size:11pt;font-weight:bold;">&copy;2013 Tsingxu</p></div>
   </body>
 </html>
 
