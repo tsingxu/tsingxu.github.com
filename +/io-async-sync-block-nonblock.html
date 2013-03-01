@@ -27,6 +27,7 @@
         <section id="downloads">
           <a href="https://github.com/tsingxu" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
         </section>
+		<a href="../"><p>Home</p></a>
       </div>
     </header>
 
@@ -36,7 +37,7 @@
 	同步、异步用来描述用户的调用方式。如果用户调用时需要等待内核完毕后才可以进行之后的工作，则称之为同步；如果用户调用时并不需要等待，调用完毕后立即进行其他工作，后续内核会给用户一个信号，则称之为异步。
 	阻塞、非阻塞用来描述内核对于IO的实现方式。如果调用内核的IO操作，内核阻塞，直到内核数据准备完毕、拷贝到用户态，则称之为阻塞IO；如果调用内核的IO操作，内核立即返回标识，标识数据是否准备完毕，则称之为非阻塞IO。
 	现在服务器端对于高并发常用的是epoll、aio等，对于epoll属于同步的非阻塞IO，aio属于异步IO（具体IO侧实现可以是阻塞和非阻塞）。
-</pre><img src="http://static.oschina.net/uploads/space/2012/1210/101541_O8OQ_198232.gif" alt="" /> 
+</pre>
       </section>
     </div>
 	
